@@ -1,35 +1,35 @@
 <?php
 include("class_registro_dal.php");
-
+//se guardan los datos del formulario en variables con el emtodo $_POST
 $matricula=$_POST["imatricula"];
 $nombre=$_POST["inombre"];
 $correo=$_POST["icorreo"];
 $telefono=$_POST["itelefono"];
 $grado=$_POST["sgrado"];
-$plan=$_POST["splan"];
 $carrera=$_POST["scarrera"];
 $materias=$_POST["smaterias"];
-$estatus=$_POST["status"];
+$estatus=$_POST["sestatus"];
 
-echo "Los datos $matricula , $nombre , $correo , $telefono , $grado , $plan , $carrera , $materias , $estatus se registraron!";
+echo "Los datos $matricula , $nombre , $correo , $telefono , $grado , $carrera , $materias , $estatus se registraron!"."\n";
 
-
-//$obj = new class_db();
+//Se crea un objeto con el constructor de class_registro mandando los datos del formulario como parametros
+$obj=new registro($matricula,$nombre,$correo,$telefono,$grado,$carrera,$materias,$estatus);
+//Se manda ese objeto creado($obj) mandando llamar a la funcion insertar
 $obj2=new registro_dal();
-$resultado2=$obj2->  get_datos_by_matricula(13214207);
-print_r($resultado2);
+$resultado2=$obj2-> insertar($obj);
+print($resultado2);
 
+/*
+//trae un campo por matricula
 $obj3=new registro_dal();
-$resultado3=$obj3-> get_datos_lista_alumnos();
+$resultado3=$obj3->  get_datos_by_matricula(13214207);
 print_r($resultado3);
+*/
 
-$obj=new registro_dal();
-$resultado=$obj-> insertar(47162534,'Insertado','insertado@uadec.edu.mx','8442109473','5',1,2,'Activo');
-print($resultado);
-
+/*
+//trae la tabla alumnos
 $obj4=new registro_dal();
-$resultado4=$obj4->  borrar(50128535);
-print($resultado4);
-
-
+$resultado4=$obj4-> get_datos_lista_alumnos();
+print_r($resultado4);
+*/
 ?>

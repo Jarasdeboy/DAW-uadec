@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2019-03-12 17:27:42
+Date: 2019-03-16 14:43:06
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,10 +24,10 @@ CREATE TABLE `alumnos` (
   `Nombre` char(30) DEFAULT NULL,
   `Correo` varchar(30) DEFAULT NULL,
   `Telefono` varchar(10) DEFAULT NULL,
-  `Grado` char(10) DEFAULT '',
+  `Grado` varchar(10) DEFAULT '',
   `Id_carrera` int(10) DEFAULT NULL,
   `Id_materia` int(10) DEFAULT NULL,
-  `Estatus` char(10) DEFAULT NULL,
+  `Estatus` int(10) DEFAULT NULL,
   PRIMARY KEY (`Matricula`),
   KEY `id_carrera` (`Id_carrera`),
   KEY `id_materia` (`Id_materia`),
@@ -38,11 +38,13 @@ CREATE TABLE `alumnos` (
 -- ----------------------------
 -- Records of alumnos
 -- ----------------------------
-INSERT INTO `alumnos` VALUES ('4287439', 'Ernesto Perez', 'ernesto@uadec.edu.mx', '8441027426', '3', '4', '1', 'Activo');
-INSERT INTO `alumnos` VALUES ('13214207', 'Daniel Enriquez', 'daniel@uadec.edu.mx', '8441234567', '8', '2', '1', 'Activo');
-INSERT INTO `alumnos` VALUES ('13214567', 'Juan Carlos', 'carlos@uadec.edu.mx', '8440128493', '9', '2', '4', 'Activo');
-INSERT INTO `alumnos` VALUES ('50128535', 'Jose jimenez', 'jose@uadec.edu.mx', '8440148273', '7', '4', '3', 'Inactivo');
-INSERT INTO `alumnos` VALUES ('52359036', 'Raul Martinez', 'raul@uadec.edu.mx', '8440194725', '9', '2', '2', 'Activo');
+INSERT INTO `alumnos` VALUES ('4287439', 'Ernesto Perez', 'ernesto@uadec.edu.mx', '8441027426', '3', '4', '1', '1');
+INSERT INTO `alumnos` VALUES ('13214207', 'Daniel Enriquez', 'daniel@uadec.edu.mx', '8441234567', '8', '2', '1', '1');
+INSERT INTO `alumnos` VALUES ('13214567', 'Juan Carlos', 'carlos@uadec.edu.mx', '8440128493', '9', '2', '4', '1');
+INSERT INTO `alumnos` VALUES ('47162534', 'NombreInsertado', 'insertado@uadec.edu.mx', '8442109473', '5', '1', '2', '1');
+INSERT INTO `alumnos` VALUES ('50128535', 'Jose jimenez', 'jose@uadec.edu.mx', '8440148273', '7', '4', '3', '2');
+INSERT INTO `alumnos` VALUES ('52359036', 'Raul Martinez', 'raul@uadec.edu.mx', '8440194725', '9', '2', '2', '1');
+INSERT INTO `alumnos` VALUES ('56722121', 'Eliza Smith', 'eliza@uadec.edu.mx', '8444837542', '6', '5', '2', '2');
 
 -- ----------------------------
 -- Table structure for `carrera`
@@ -50,17 +52,20 @@ INSERT INTO `alumnos` VALUES ('52359036', 'Raul Martinez', 'raul@uadec.edu.mx', 
 DROP TABLE IF EXISTS `carrera`;
 CREATE TABLE `carrera` (
   `Id_carrera` int(10) NOT NULL,
-  `Nombre_carrera` varchar(50) DEFAULT NULL,
+  `Nombre_carrera` varchar(70) DEFAULT NULL,
   PRIMARY KEY (`Id_carrera`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of carrera
 -- ----------------------------
-INSERT INTO `carrera` VALUES ('1', 'Ingeniero en electronica y comunicaciones');
-INSERT INTO `carrera` VALUES ('2', 'Ingeniero en sistemas computacionales');
-INSERT INTO `carrera` VALUES ('3', 'Ingeniero industrial y de sistemas');
-INSERT INTO `carrera` VALUES ('4', 'Ingeniero en tecnologias de informacion y cominica');
+INSERT INTO `carrera` VALUES ('1', 'Ingeniero en electronica y comunicaciones 828');
+INSERT INTO `carrera` VALUES ('2', 'Ingeniero en sistemas computacionales 828');
+INSERT INTO `carrera` VALUES ('3', 'Ingeniero industrial y de sistemas 828');
+INSERT INTO `carrera` VALUES ('4', 'Ingeniero en tecnologias de informacion y cominicaciones 828');
+INSERT INTO `carrera` VALUES ('5', 'Ingeniero en tecnologias de informacion y comunicaciones 828');
+INSERT INTO `carrera` VALUES ('6', 'Licenciado en sistemas computacionales y administrativos 828');
+INSERT INTO `carrera` VALUES ('7', 'Ingeniero automotriz 828');
 
 -- ----------------------------
 -- Table structure for `materias`

@@ -84,12 +84,12 @@
               </select>
             </div>
           </div>
-          <div class="row"><br>
+        <!--   <div class="row"><br>
             <div class="col-25">
               <label for="lnombre">PLAN:</label>
             </div>
             <div class="col-75">
-              <select name="splan" id="splan">
+                <select name="splan" id="splan">
                 <option value="0">Seleccionar Plan</option>
                 <option value="1"> Plan 827 </option>
                 <option value="2"> Plan 828 </option>
@@ -99,7 +99,7 @@
 
               </select>
             </div>
-          </div>
+          </div>-->
 
           <div class="row"><br>
             <div class="col-25">
@@ -108,13 +108,13 @@
             <div class="col-75">
               <select name="scarrera" id="scarrera">
                 <option value="0">Seleccionar Carrera</option>
-                <option value="1"> Ingeniero en electronica y comunicaciones</option>
-                <option value="2"> Ingeniero en sistemas computacionales</option>
-                <option value="3"> Ingeniero industrial y de sistemas</option>
-                <option value="4"> Ingeniero en tecnologias de informacion y comunicaciones</option>
-                <option value="5"> Ingeniero en tecnologias de informacion y comunicaciones</option>
-                <option value="6"> Licenciado en sistemas computacionales y administrativos</option>
-                <option value="7"> Ingeniero automotriz</option>
+                <option value="1"> Ingeniero en electronica y comunicaciones 828</option>
+                <option value="2"> Ingeniero en sistemas computacionales 828</option>
+                <option value="3"> Ingeniero industrial y de sistemas 828</option>
+                <option value="4"> Ingeniero en tecnologias de informacion y comunicaciones 828</option>
+                <option value="5"> Ingeniero en tecnologias de informacion y comunicaciones 828</option>
+                <option value="6"> Licenciado en sistemas computacionales y administrativos 828</option>
+                <option value="7"> Ingeniero automotriz 828</option>
 
               </select>
             </div>
