@@ -1,4 +1,5 @@
 function valida_alumno(){
+	//$("register-form").submit();
 	var js_mtr = document.getElementById("imatricula").value.trim();
 	var js_nom = document.getElementById("inombre").value.trim();
 	var js_corr = document.getElementById("icorreo").value.trim();
@@ -60,6 +61,8 @@ function valida_alumno(){
 	}
 
 	alert("Formualario Autorizado. :)");
+
+
 }
 
 function validar_mtr(evt){

@@ -45,6 +45,68 @@ class registro_dal extends class_Db{
   return $lista;
 }
 
+    function existeMatricula($Matricula){
+     $Matricula=$this->db_conn->real_escape_string($Matricula);
+
+       $sql = "select count(*) from Alumnos";
+       $sql .= " where Matricula='$Matricula'";
+
+       //print $sql;
+       $this->set_sql($sql);
+       $rs = mysqli_query($this->db_conn,$this->db_query) or die(mysqli_error($this->db_conn));
+       //$total_de_registro = mysqli_num_rows($rs);
+       $renglon= mysqli_fetch_array($rs);
+       $cuantos= $renglon[0];
+
+       return $cuantos;
+     }
+
+function get_datos_lista_materias(){
+
+  $elsql = "select * from materias";
+
+  //print $elsql;exit;
+
+  $this->set_sql($elsql);
+  $lista=NULL;
+  $rs=mysqli_query($this->db_conn,$this->db_query) or die (mysqli_error($this->db_conn));
+  $lista=mysqli_fetch_all($rs);
+
+  //$i=0;
+/*  while($renglon=mysqli_fetch_assoc($rs)) {
+    $obj_det = new registro(
+    $renglon["Matricula"],
+    utf8_encode($renglon["Nombre"]),
+    utf8_encode($renglon["Correo"]),
+    utf8_encode($renglon["Telefono"]),
+    utf8_encode($renglon["Grado"]),
+    $renglon["Id_carrera"],
+    $renglon["Id_materia"],
+    $renglon["Estatus"]
+    );*/
+/*
+    $i++;
+    $lista[$i]=$obj_det;
+    unset($obj_det);*/
+/*  }
+  mysqli_free_result($rs);*/
+  return $lista;
+}
+
+function get_datos_lista_carreras(){
+
+  $elsql = "select * from carrera";
+
+  //print $elsql;exit;
+
+  $this->set_sql($elsql);
+  $lista=NULL;
+  $rs=mysqli_query($this->db_conn,$this->db_query) or die (mysqli_error($this->db_conn));
+  $lista=mysqli_fetch_all($rs);
+
+  return $lista;
+}
+
 	    //Insertar
   	function insertar($obj){
 
@@ -84,6 +146,8 @@ class registro_dal extends class_Db{
 		unset($obj);
  		return $insertado;
   	}
+
+
 
   // function actualizar($obj){
 
@@ -136,7 +200,8 @@ class registro_dal extends class_Db{
         return $borrado;
     }
 
-*/
+*/  
+
 
 //Muestra un campo d ela tabla alumnos segun la matricula dada
     function get_datos_by_matricula($Matricula){

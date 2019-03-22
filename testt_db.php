@@ -12,12 +12,27 @@ $estatus=$_POST["sestatus"];
 
 echo "Los datos $matricula , $nombre , $correo , $telefono , $grado , $carrera , $materias , $estatus se registraron!"."\n";
 
+
+$obj5=new registro_dal();
+$resultado5=$obj5-> existeMatricula($matricula);
+print_r($resultado5);
+if($resultado5!=0) {
+  print "Matricula si existe!"."\n";
+  //Se crea un objeto con el constructor de class_registro mandando los datos del formulario como parametros
+  $obj=new registro($matricula,$nombre,$correo,$telefono,$grado,$carrera,$materias,$estatus);
+  //Se manda ese objeto creado($obj) mandando llamar a la funcion insertar
+  $obj2=new registro_dal();
+  $resultado2=$obj2-> insertar($obj);
+  print($resultado2);
+}else{
+    print "Matricula no existe!"."\n";
+}
 //Se crea un objeto con el constructor de class_registro mandando los datos del formulario como parametros
-$obj=new registro($matricula,$nombre,$correo,$telefono,$grado,$carrera,$materias,$estatus);
+/*$obj=new registro($matricula,$nombre,$correo,$telefono,$grado,$carrera,$materias,$estatus);
 //Se manda ese objeto creado($obj) mandando llamar a la funcion insertar
 $obj2=new registro_dal();
 $resultado2=$obj2-> insertar($obj);
-print($resultado2);
+print($resultado2);*/
 
 
 /*
